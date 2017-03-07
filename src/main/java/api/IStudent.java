@@ -36,7 +36,6 @@ public interface IStudent {
      */
     void submitHomework(String studentName, String homeworkName, String answerString, String className, int year);
 
-
     // Getters for testing purposes
     /**
      * @return Whether student {@code studentName} is registered for this class
