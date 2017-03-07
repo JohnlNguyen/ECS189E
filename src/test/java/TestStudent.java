@@ -38,8 +38,17 @@ public class TestStudent {
         this.student.registerForClass("Jeff","ECS189E",2017);
         this.student.registerForClass("Alex","ECS189E",2017);
         this.student.registerForClass("Vincent","ECS189E",2017);
+        assertFalse(this.student.isRegisteredFor("Vincent","ECS189E",2017));
+    }
+    @Test
+    public void testRegistrationFull2() {
+        this.student.registerForClass("Jeff","ECS189E",2017);
+        this.student.registerForClass("Alex","ECS189E",2017);
+        this.student.registerForClass("Vincent","ECS189E",2017);
         this.student.registerForClass("Bob","ECS189E",2017);
-        assertFalse(this.student.isRegisteredFor("Bob","ECS189E",2017));
+        boolean both = this.student.isRegisteredFor("Bob","ECS189E",2017) &&
+                this.student.isRegisteredFor("Vincent","ECS189E",2017);
+        assertFalse(both);
     }
     @Test
     public void testClassNotExist() {

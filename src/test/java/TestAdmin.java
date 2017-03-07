@@ -76,7 +76,33 @@ public class TestAdmin {
         this.admin.createClass("ECS189E", 2017, "Instructor", 5);
         this.admin.createClass("ECS160", 2017, "Instructor", 10);
         this.admin.createClass("ECS145", 2017, "Instructor", 15);
-        assertFalse(this.admin.classExists("ECS145", 2017));
+        boolean all_exist =  this.admin.classExists("ECS189E", 2017) && this.admin.classExists("ECS160", 2017)
+                && this.admin.classExists("ECS145", 2017);
+        assertFalse(all_exist);
+    }
+    /*
+    Test for instructor teaching 3 classes in different years
+     */
+    @Test
+    public void test3SameInstructor() {
+        this.admin.createClass("ECS189E", 2017, "Instructor", 5);
+        this.admin.createClass("ECS160", 2018, "Instructor", 10);
+        this.admin.createClass("ECS145", 2017, "Instructor", 15);
+        boolean exists = this.admin.classExists("ECS189E", 2017) && this.admin.classExists("ECS160", 2018)
+            && this.admin.classExists("ECS145", 2017);
+        assertTrue(exists);
+    }
+    /*
+    Test if instructor can teach 2 classes each year
+     */
+    @Test
+    public void testMake2SameInstructor(){
+        this.admin.createClass("ECS189E", 2017, "Instructor", 5);
+        this.admin.createClass("ECS160", 2017, "Instructor", 10);
+        boolean both = this.admin.classExists("ECS189E", 2017) && this.admin.classExists("ECS160", 2017);
+        boolean same = this.admin.getClassInstructor("ECS189E",2017).equals("Instructor") &&
+                this.admin.getClassInstructor("ECS160",2017).equals("Instructor");
+        assertTrue(both && same);
     }
 
     @Test
