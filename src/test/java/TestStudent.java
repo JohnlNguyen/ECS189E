@@ -33,6 +33,9 @@ public class TestStudent {
         this.student.registerForClass("John","ECS189E",2017);
         assertTrue(this.student.isRegisteredFor("John","ECS189E",2017));
     }
+
+
+
     @Test
     public void testRegistrationFull() {
         this.student.registerForClass("Jeff","ECS189E",2017);

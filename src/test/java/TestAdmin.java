@@ -148,4 +148,12 @@ public class TestAdmin {
         assertEquals(this.admin.getClassInstructor("Test",2017),"Instructor");
     }
 
+    @Test
+    public void testInstructorNULL() {
+        this.admin.createClass("Test", 2017, null, 5);
+        assertNotEquals(this.admin.getClassInstructor("Test",2017),null);
+    }
+
+
+
 }
