@@ -1,14 +1,12 @@
 import api.IAdmin;
-import api.IStudent;
 import api.IInstructor;
+import api.IStudent;
 import api.core.impl.Admin;
-import api.core.impl.Student;
 import api.core.impl.Instructor;
-
+import api.core.impl.Student;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -109,6 +107,7 @@ public class TestInstructor {
     @Test
     public void testNegativeGrade() {
         this.instructor.addHomework("Prem","ECS189E",2017,"HW1","Test");
+        this.student.submitHomework("John","HW1","ABC","ECS189E",2017);
         this.instructor.assignGrade("Prem","ECS189E",2017,"HW1","John",-1);
         Integer i = new Integer(this.instructor.getGrade("ECS189E", 2017,"HW1","John"));
         assertFalse(i.equals(-1));

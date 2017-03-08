@@ -7,7 +7,7 @@ import api.core.impl.Student;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 /*
 A file for each class, test class for each class
     3 files -> AdminTest, InstructorTest, StudentTest

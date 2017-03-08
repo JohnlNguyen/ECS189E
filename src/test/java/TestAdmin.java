@@ -2,16 +2,11 @@ import api.IAdmin;
 import api.IStudent;
 import api.core.impl.Admin;
 import api.core.impl.Student;
-
-
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
-
-
-import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
 
 /**

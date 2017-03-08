@@ -1,9 +1,9 @@
-import api.IStudent;
 import api.IAdmin;
 import api.IInstructor;
+import api.IStudent;
+import api.core.impl.Admin;
 import api.core.impl.Instructor;
 import api.core.impl.Student;
-import api.core.impl.Admin;
 import org.junit.Before;
 import org.junit.Test;
 
