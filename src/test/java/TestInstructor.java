@@ -89,8 +89,29 @@ public class TestInstructor {
     public void testAssignGradeWithNoSubmit() {
         this.instructor.addHomework("Prem","ECS189E",2017,"HW1","Test");
         this.instructor.assignGrade("Prem","ECS189E",2017,"HW1","John",100);
+        boolean submitted = this.student.hasSubmitted("John","HW1","ECS189E",2017);
+        Integer i = new Integer(this.instructor.getGrade("ECS189E", 2017,"HW1","John"));
+        assertFalse(i.equals(100) && submitted);
+    }
+    /*
+    Test for assigning homework but student did not submit
+     */
+    @Test
+    public void testNotSubmitted(){
+        this.instructor.addHomework("Prem","ECS189E",2017,"HW1","Test");
+        this.instructor.assignGrade("Prem","ECS189E",2017,"HW1","John",100);
         Integer i = new Integer(this.instructor.getGrade("ECS189E", 2017,"HW1","John"));
         assertFalse(i.equals(100));
+    }
+    /*
+    Test for assigning homework but student did not submit
+     */
+    @Test
+    public void testNegativeGrade() {
+        this.instructor.addHomework("Prem","ECS189E",2017,"HW1","Test");
+        this.instructor.assignGrade("Prem","ECS189E",2017,"HW1","John",-1);
+        Integer i = new Integer(this.instructor.getGrade("ECS189E", 2017,"HW1","John"));
+        assertFalse(i.equals(-1));
     }
 
 }
